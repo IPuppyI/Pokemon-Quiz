@@ -1,0 +1,402 @@
+[
+  {
+    "no": 152,
+    "name": "Chikorita"
+  },
+  {
+    "no": 153,
+    "name": "Bayleef"
+  },
+  {
+    "no": 154,
+    "name": "Meganium"
+  },
+  {
+    "no": 155,
+    "name": "Cyndaquil"
+  },
+  {
+    "no": 156,
+    "name": "Quilava"
+  },
+  {
+    "no": 157,
+    "name": "Typhlosion"
+  },
+  {
+    "no": 158,
+    "name": "Totodile"
+  },
+  {
+    "no": 159,
+    "name": "Croconaw"
+  },
+  {
+    "no": 160,
+    "name": "Feraligatr"
+  },
+  {
+    "no": 161,
+    "name": "Sentret"
+  },
+  {
+    "no": 162,
+    "name": "Furret"
+  },
+  {
+    "no": 163,
+    "name": "Hoothoot"
+  },
+  {
+    "no": 164,
+    "name": "Noctowl"
+  },
+  {
+    "no": 165,
+    "name": "Ledyba"
+  },
+  {
+    "no": 166,
+    "name": "Ledian"
+  },
+  {
+    "no": 167,
+    "name": "Spinarak"
+  },
+  {
+    "no": 168,
+    "name": "Ariados"
+  },
+  {
+    "no": 169,
+    "name": "Crobat"
+  },
+  {
+    "no": 170,
+    "name": "Chinchou"
+  },
+  {
+    "no": 171,
+    "name": "Lanturn"
+  },
+  {
+    "no": 172,
+    "name": "Pichu"
+  },
+  {
+    "no": 173,
+    "name": "Cleffa"
+  },
+  {
+    "no": 174,
+    "name": "Igglybuff"
+  },
+  {
+    "no": 175,
+    "name": "Togepi"
+  },
+  {
+    "no": 176,
+    "name": "Togetic"
+  },
+  {
+    "no": 177,
+    "name": "Natu"
+  },
+  {
+    "no": 178,
+    "name": "Xatu"
+  },
+  {
+    "no": 179,
+    "name": "Mareep"
+  },
+  {
+    "no": 180,
+    "name": "Flaaffy"
+  },
+  {
+    "no": 181,
+    "name": "Ampharos"
+  },
+  {
+    "no": 182,
+    "name": "Bellossom"
+  },
+  {
+    "no": 183,
+    "name": "Marill"
+  },
+  {
+    "no": 184,
+    "name": "Azumarill"
+  },
+  {
+    "no": 185,
+    "name": "Sudowoodo"
+  },
+  {
+    "no": 186,
+    "name": "Politoed"
+  },
+  {
+    "no": 187,
+    "name": "Hoppip"
+  },
+  {
+    "no": 188,
+    "name": "Skiploom"
+  },
+  {
+    "no": 189,
+    "name": "Jumpluff"
+  },
+  {
+    "no": 190,
+    "name": "Aipom"
+  },
+  {
+    "no": 191,
+    "name": "Sunkern"
+  },
+  {
+    "no": 192,
+    "name": "Sunflora"
+  },
+  {
+    "no": 193,
+    "name": "Yanma"
+  },
+  {
+    "no": 194,
+    "name": "Wooper"
+  },
+  {
+    "no": 195,
+    "name": "Quagsire"
+  },
+  {
+    "no": 196,
+    "name": "Espeon"
+  },
+  {
+    "no": 197,
+    "name": "Umbreon"
+  },
+  {
+    "no": 198,
+    "name": "Murkrow"
+  },
+  {
+    "no": 199,
+    "name": "Slowking"
+  },
+  {
+    "no": 200,
+    "name": "Misdreavus"
+  },
+  {
+    "no": 201,
+    "name": "Unown"
+  },
+  {
+    "no": 202,
+    "name": "Wobbuffet"
+  },
+  {
+    "no": 203,
+    "name": "Girafarig"
+  },
+  {
+    "no": 204,
+    "name": "Pineco"
+  },
+  {
+    "no": 205,
+    "name": "Forretress"
+  },
+  {
+    "no": 206,
+    "name": "Dunsparce"
+  },
+  {
+    "no": 207,
+    "name": "Gligar"
+  },
+  {
+    "no": 208,
+    "name": "Steelix"
+  },
+  {
+    "no": 209,
+    "name": "Snubbull"
+  },
+  {
+    "no": 210,
+    "name": "Granbull"
+  },
+  {
+    "no": 211,
+    "name": "Qwilfish"
+  },
+  {
+    "no": 212,
+    "name": "Scizor"
+  },
+  {
+    "no": 213,
+    "name": "Shuckle"
+  },
+  {
+    "no": 214,
+    "name": "Heracross"
+  },
+  {
+    "no": 215,
+    "name": "Sneasel"
+  },
+  {
+    "no": 216,
+    "name": "Teddiursa"
+  },
+  {
+    "no": 217,
+    "name": "Ursaring"
+  },
+  {
+    "no": 218,
+    "name": "Slugma"
+  },
+  {
+    "no": 219,
+    "name": "Magcargo"
+  },
+  {
+    "no": 220,
+    "name": "Swinub"
+  },
+  {
+    "no": 221,
+    "name": "Piloswine"
+  },
+  {
+    "no": 222,
+    "name": "Corsola"
+  },
+  {
+    "no": 223,
+    "name": "Remoraid"
+  },
+  {
+    "no": 224,
+    "name": "Octillery"
+  },
+  {
+    "no": 225,
+    "name": "Delibird"
+  },
+  {
+    "no": 226,
+    "name": "Mantine"
+  },
+  {
+    "no": 227,
+    "name": "Skarmory"
+  },
+  {
+    "no": 228,
+    "name": "Houndour"
+  },
+  {
+    "no": 229,
+    "name": "Houndoom"
+  },
+  {
+    "no": 230,
+    "name": "Kingdra"
+  },
+  {
+    "no": 231,
+    "name": "Phanpy"
+  },
+  {
+    "no": 232,
+    "name": "Donphan"
+  },
+  {
+    "no": 233,
+    "name": "Porygon2"
+  },
+  {
+    "no": 234,
+    "name": "Stantler"
+  },
+  {
+    "no": 235,
+    "name": "Smeargle"
+  },
+  {
+    "no": 236,
+    "name": "Tyrogue"
+  },
+  {
+    "no": 237,
+    "name": "Hitmontop"
+  },
+  {
+    "no": 238,
+    "name": "Smoochum"
+  },
+  {
+    "no": 239,
+    "name": "Elekid"
+  },
+  {
+    "no": 240,
+    "name": "Magby"
+  },
+  {
+    "no": 241,
+    "name": "Miltank"
+  },
+  {
+    "no": 242,
+    "name": "Blissey"
+  },
+  {
+    "no": 243,
+    "name": "Raikou"
+  },
+  {
+    "no": 244,
+    "name": "Entei"
+  },
+  {
+    "no": 245,
+    "name": "Suicune"
+  },
+  {
+    "no": 246,
+    "name": "Larvitar"
+  },
+  {
+    "no": 247,
+    "name": "Pupitar"
+  },
+  {
+    "no": 248,
+    "name": "Tyranitar"
+  },
+  {
+    "no": 249,
+    "name": "Lugia"
+  },
+  {
+    "no": 250,
+    "name": "Ho-Oh"
+  },
+  {
+    "no": 251,
+    "name": "Celebi"
+  }
+]
