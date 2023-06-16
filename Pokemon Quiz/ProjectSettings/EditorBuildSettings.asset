@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Play Screen.unity
+    guid: 64d1894eaf0ecd242bced36f01be00b2
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: af7e5a6c998d7f04e96f046e4a6e2433, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: e02f6c748851a3b44b54fcf0236f7829, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: e5eb62470622d4c4c88d769e3b0d08fa, type: 2}
