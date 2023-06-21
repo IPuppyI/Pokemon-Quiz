@@ -676,6 +676,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496042871}
   m_CullTransparentMesh: 1
+--- !u!1 &1091677466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091677468}
+  - component: {fileID: 1091677467}
+  m_Layer: 0
+  m_Name: Pokemon Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1091677467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091677466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eea7107e0e85e743a21d482a727b10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gen1:
+    pokemonFinalList: []
+  gen2:
+    pokemonFinalList: []
+  gen3:
+    pokemonFinalList: []
+  gen4:
+    pokemonFinalList: []
+  gen5:
+    pokemonFinalList: []
+  gen6:
+    pokemonFinalList: []
+  gen7:
+    pokemonFinalList: []
+  gen8:
+    pokemonFinalList: []
+  gen9:
+    pokemonFinalList: []
+  legendsArceus:
+    pokemonFinalList: []
+  gen1Json: {fileID: 4900000, guid: 3f43f3c38b6eec647a484e41465dfda4, type: 3}
+  gen2Json: {fileID: 4900000, guid: 769b5e45a2089b54cb013088e0d27aff, type: 3}
+  gen3Json: {fileID: 4900000, guid: 3ded003dccc3a334987ee440a6c3983d, type: 3}
+  gen4Json: {fileID: 4900000, guid: c4dfc3eb8abc91045869ec67b5768083, type: 3}
+  gen5Json: {fileID: 4900000, guid: 32458399fd17a474193ea56b74e4c7c9, type: 3}
+  gen6Json: {fileID: 4900000, guid: 45c0b26fcd696b5439ab8e715742b192, type: 3}
+  gen7Json: {fileID: 4900000, guid: f51d18429c551a94784c5ed172071cc0, type: 3}
+  gen8Json: {fileID: 4900000, guid: 77876fad30ef7e74a8efd903c7770b58, type: 3}
+  gen9Json: {fileID: 4900000, guid: 6f3405f092fef5b46b6878f37618b075, type: 3}
+  legendsArceusJson: {fileID: 4900000, guid: 5551c3869377a3848a0d58b8e83e7b3b, type: 3}
+--- !u!4 &1091677468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091677466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 717.7092, y: 1559.0127, z: -4.5931516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1391662653
 GameObject:
   m_ObjectHideFlags: 0

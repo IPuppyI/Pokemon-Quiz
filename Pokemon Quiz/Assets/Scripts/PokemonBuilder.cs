@@ -23,6 +23,7 @@ public class PokemonBuilder : MonoBehaviour
     {
         GetImages();
         CreateLists();
+        SaveLists();
     }
 
     private void GetImages()
@@ -56,7 +57,7 @@ public class PokemonBuilder : MonoBehaviour
         int i = 0;
         foreach (JsonReader.PokemonList pokemonList in jsonReader.pokemonLists.pokemonLists)
         {
-            foreach(JsonReader.PokemonInfo pokemon in pokemonList.Pokemon)
+            foreach (JsonReader.PokemonInfo pokemon in pokemonList.Pokemon)
             {
                 PokemonFinal pokemonFinal = new PokemonFinal(pokemon.no, pokemon.name, images.ElementAt(i));
                 switch (pokemon.no)
@@ -95,7 +96,55 @@ public class PokemonBuilder : MonoBehaviour
                 i++;
             }
         }
-        
+    }
+
+    private void SaveLists()
+    {
+        // Serialize and save gen1 list
+        string gen1Json = JsonUtility.ToJson(gen1);
+        SaveJsonToFile("gen1.json", gen1Json);
+
+        // Serialize and save gen2 list
+        string gen2Json = JsonUtility.ToJson(gen2);
+        SaveJsonToFile("gen2.json", gen2Json);
+
+        // Serialize and save gen3 list
+        string gen3Json = JsonUtility.ToJson(gen3);
+        SaveJsonToFile("gen3.json", gen3Json);
+
+        // Serialize and save gen4 list
+        string gen4Json = JsonUtility.ToJson(gen4);
+        SaveJsonToFile("gen4.json", gen4Json);
+
+        // Serialize and save gen5 list
+        string gen5Json = JsonUtility.ToJson(gen5);
+        SaveJsonToFile("gen5.json", gen5Json);
+
+        // Serialize and save gen6 list
+        string gen6Json = JsonUtility.ToJson(gen6);
+        SaveJsonToFile("gen6.json", gen6Json);
+
+        // Serialize and save gen7 list
+        string gen7Json = JsonUtility.ToJson(gen7);
+        SaveJsonToFile("gen7.json", gen7Json);
+
+        // Serialize and save gen8 list
+        string gen8Json = JsonUtility.ToJson(gen8);
+        SaveJsonToFile("gen8.json", gen8Json);
+
+        // Serialize and save gen9 list
+        string gen9Json = JsonUtility.ToJson(gen9);
+        SaveJsonToFile("gen9.json", gen9Json);
+
+        // Serialize and save legendsArceus list
+        string legendsArceusJson = JsonUtility.ToJson(legendsArceus);
+        SaveJsonToFile("legendsArceus.json", legendsArceusJson);
+    }
+
+    private void SaveJsonToFile(string fileName, string json)
+    {
+        string path = Path.Combine(Application.dataPath, fileName);
+        File.WriteAllText(path, json);
     }
 
     [System.Serializable]
@@ -116,6 +165,6 @@ public class PokemonBuilder : MonoBehaviour
     [System.Serializable]
     public class PokemonFinalList
     {
-        public List<PokemonFinal> pokemonFinalList;
+        public List<PokemonFinal> pokemonFinalList = new List<PokemonFinal>();
     }
 }
