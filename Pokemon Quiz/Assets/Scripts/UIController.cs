@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private PokemonSelector pokemonSelector;
     [SerializeField] private GameObject correct;
     [SerializeField] private GameObject wrong;
-    [SerializeField] private TextMeshProUGUI inputText;
+    [SerializeField] private TMP_InputField inputText;
 
     private void Awake()
     {

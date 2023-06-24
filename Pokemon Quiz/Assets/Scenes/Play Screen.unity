@@ -1023,7 +1023,7 @@ MonoBehaviour:
   pokemonSelector: {fileID: 1439810690}
   correct: {fileID: 1039840943}
   wrong: {fileID: 29655173}
-  inputText: {fileID: 178074597}
+  inputText: {fileID: 2129671523}
 --- !u!4 &638467944
 Transform:
   m_ObjectHideFlags: 0
