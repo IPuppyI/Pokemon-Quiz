@@ -31,6 +31,11 @@ public class JsonReader : MonoBehaviour
 
     void Awake()
     {
+        SetLists();
+    }
+
+    public void SetLists()
+    {
         pokemonLists.pokemonLists[0] = JsonUtility.FromJson<PokemonList>(gen1.text);
         pokemonLists.pokemonLists[1] = JsonUtility.FromJson<PokemonList>(gen2.text);
         pokemonLists.pokemonLists[2] = JsonUtility.FromJson<PokemonList>(gen3.text);
@@ -41,7 +46,6 @@ public class JsonReader : MonoBehaviour
         pokemonLists.pokemonLists[7] = JsonUtility.FromJson<PokemonList>(gen8.text);
         pokemonLists.pokemonLists[8] = JsonUtility.FromJson<PokemonList>(legendsArceus.text);
         pokemonLists.pokemonLists[9] = JsonUtility.FromJson<PokemonList>(gen9.text);
-        
     }
 
     public PokemonInfo GetPokemonByNum(int num)

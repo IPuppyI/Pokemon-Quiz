@@ -1020,8 +1020,10 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   toggles: {fileID: 0}
   pokemonGuessing: {fileID: 1239242265}
-  correct: {fileID: 1039840945}
-  wrong: {fileID: 29655175}
+  pokemonSelector: {fileID: 1439810690}
+  correct: {fileID: 1039840943}
+  wrong: {fileID: 29655173}
+  inputText: {fileID: 178074597}
 --- !u!4 &638467944
 Transform:
   m_ObjectHideFlags: 0
@@ -1599,7 +1601,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.8352941, g: 0.1764706, b: 0.15686275, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

@@ -1257,6 +1257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   toggles: {fileID: 0}
+  pokemonGuessing: {fileID: 0}
+  correct: {fileID: 0}
+  wrong: {fileID: 0}
 --- !u!4 &1505851164
 Transform:
   m_ObjectHideFlags: 0

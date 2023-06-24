@@ -7,7 +7,7 @@ public class PokemonGuessing : MonoBehaviour
 {
     [SerializeField] private PokemonSelector pokemonSelector;
     [SerializeField] private TextMeshProUGUI input;
-    private float threshold;
+    private float threshold = 0.95f;
 
     public bool CheckAnswer()
     {
@@ -20,7 +20,7 @@ public class PokemonGuessing : MonoBehaviour
         {
             if (i > pokemonName.Length - 1)
             {
-                Debug.Log("Over Index");
+                Debug.Log("Over Index"); //Remove this later
                 break;
             }
             if (character.Equals(temp[i]))

@@ -37,6 +37,14 @@ public class PokemonSelector : MonoBehaviour
     {
         Texture2D imageT = pokemonImages.pokemonImages[index];
         image.sprite = Sprite.Create(imageT, new Rect(0, 0, imageT.width, imageT.height), new Vector2(0.5f, 0.5f));
+        if (gameManager.GetSilhouettesToggle())
+        {
+            image.color = Color.black;
+        }
+        else
+        {
+            image.color = Color.white;
+        }
     }
 
     public PokemonInfo GetPokemonInfo()
