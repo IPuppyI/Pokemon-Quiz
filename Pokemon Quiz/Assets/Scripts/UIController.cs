@@ -19,6 +19,10 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            return;
+        }
         if (toggles != null)
         {
             toggles.SetGenToggles(gameManager.GetGenToggles());
