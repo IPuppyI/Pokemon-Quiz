@@ -1469,9 +1469,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1439810690}
-        m_TargetAssemblyTypeName: PokemonSelector, Assembly-CSharp
-        m_MethodName: SelectPokemon
+      - m_Target: {fileID: 638467943}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: SkipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

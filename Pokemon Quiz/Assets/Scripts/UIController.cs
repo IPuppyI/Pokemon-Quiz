@@ -52,8 +52,6 @@ public class UIController : MonoBehaviour
         if (pokemonGuessing.CheckAnswer())
         {
             StartCoroutine(Right());
-            inputText.text = "";
-            pokemonSelector.SelectPokemon();
         }
         else
         {
@@ -64,6 +62,12 @@ public class UIController : MonoBehaviour
     public void PlayBackButton()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void SkipButton()
+    {
+        inputText.text = "";
+        pokemonSelector.SelectPokemon();
     }
 
     private IEnumerator Wrong()
@@ -77,5 +81,7 @@ public class UIController : MonoBehaviour
         correct.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         correct.SetActive(false);
+        inputText.text = "";
+        pokemonSelector.SelectPokemon();
     }
 }
