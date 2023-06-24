@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private bool silhouettes = true;
     private int toggleCount = 10;
     private bool togglesEnabled = true;
+    private float threshold = 0.95f;
 
     private void Start()
     {
@@ -50,6 +51,10 @@ public class GameManager : MonoBehaviour
     {
         return togglesEnabled;
     }
+    public float GetThreshold()
+    {
+        return threshold;
+    }
     public List<Vector2> GetActiveGens()
     {
         return activeGenerations;
@@ -69,5 +74,9 @@ public class GameManager : MonoBehaviour
     public void SetTogglesEnabled(bool enabled)
     {
         togglesEnabled = enabled;
+    }
+    public void SetThreshold(float thresh)
+    {
+        threshold = thresh;
     }
 }

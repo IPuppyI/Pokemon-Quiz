@@ -42,4 +42,12 @@ public class PokemonGuessing : MonoBehaviour
             return false;
         }
     }
+    public float GetThreshold()
+    {
+        return threshold;
+    }
+    public void SetThreshold(float thresh)
+    {
+        threshold = thresh;
+    }
 }

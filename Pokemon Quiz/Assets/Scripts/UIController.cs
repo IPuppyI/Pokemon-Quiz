@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject correct;
     [SerializeField] private GameObject wrong;
     [SerializeField] private TMP_InputField inputText;
+    [SerializeField] private Slider thresholdSlider;
 
     private void Awake()
     {
@@ -25,6 +26,16 @@ public class UIController : MonoBehaviour
             toggles.SetToggleCount(gameManager.GetToggleCount());
             toggles.SetTogglesEnabled(gameManager.GetTogglesEnabled());
         }
+        if (thresholdSlider != null)
+        {
+            thresholdSlider.minValue = 0.75f;
+            thresholdSlider.maxValue = 1f;
+            thresholdSlider.value = gameManager.GetThreshold();
+        }
+        if (pokemonGuessing != null)
+        {
+            pokemonGuessing.SetThreshold(gameManager.GetThreshold());
+        }
     }
 
     public void BackButton()
@@ -33,6 +44,7 @@ public class UIController : MonoBehaviour
         gameManager.SetSilhouettesToggle(toggles.GetSilhouettesToggle());
         gameManager.SetToggleCount(toggles.GetToggleCount());
         gameManager.SetTogglesEnabled(toggles.GetTogglesEnabled());
+        gameManager.SetThreshold(thresholdSlider.value);
         gameManager.ReorganizeActiveGens();
         SceneManager.LoadScene(0);
     }
