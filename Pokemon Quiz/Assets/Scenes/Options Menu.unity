@@ -915,8 +915,8 @@ MonoBehaviour:
   - {fileID: 1926402662}
   - {fileID: 174602398}
   - {fileID: 8892978}
-  - {fileID: 1055970101}
   - {fileID: 1911352404}
+  - {fileID: 1055970101}
 --- !u!1 &376328500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,6 +3943,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   toggles: {fileID: 300278884}
+  pokemonGuessing: {fileID: 0}
+  pokemonSelector: {fileID: 0}
+  correct: {fileID: 0}
+  wrong: {fileID: 0}
+  inputText: {fileID: 0}
 --- !u!4 &1739551121
 Transform:
   m_ObjectHideFlags: 0
@@ -5007,7 +5012,7 @@ GameObject:
   - component: {fileID: 2034619732}
   - component: {fileID: 2034619731}
   m_Layer: 5
-  m_Name: Play Button (1)
+  m_Name: Reset Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
