@@ -15,6 +15,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject wrong;
     [SerializeField] private TMP_InputField inputText;
     [SerializeField] private Slider thresholdSlider;
+    [SerializeField] private Image image;
+    [SerializeField] private GameObject main;
+    [SerializeField] private GameObject gens;
+    [SerializeField] private GameObject extra;
 
     private void Awake()
     {
@@ -42,6 +46,17 @@ public class UIController : MonoBehaviour
         }
     }
 
+    // Main Menu Buttons
+    public void OptionsButton()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void PlayButtion()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    // Options Menu Buttons
     public void BackButton()
     {
         gameManager.SetGenToggles(toggles.GetGenToggles());
@@ -52,17 +67,28 @@ public class UIController : MonoBehaviour
         gameManager.ReorganizeActiveGens();
         SceneManager.LoadScene(0);
     }
-    
-    public void OptionsButton()
+    public void GensBackButton()
     {
-        SceneManager.LoadScene(2);
+        gens.SetActive(false);
+        main.SetActive(true);
+    }
+    public void ExtraBackButton()
+    {
+        extra.SetActive(false);
+        main.SetActive(true);
+    }
+    public void GensButton()
+    {
+        main.SetActive(false);
+        gens.SetActive(true);
+    }
+    public void ExtraButton()
+    {
+        main.SetActive(false);
+        extra.SetActive(true);
     }
 
-    public void PlayButtion()
-    {
-        SceneManager.LoadScene(1);
-    }
-
+    // Play Screen Buttons
     public void SubmitButton()
     {
         if (pokemonGuessing.CheckAnswer())
@@ -74,12 +100,10 @@ public class UIController : MonoBehaviour
             StartCoroutine(Wrong());
         }
     }
-
     public void PlayBackButton()
     {
         SceneManager.LoadScene(0);
     }
-
     public void SkipButton()
     {
         inputText.text = "";
@@ -89,13 +113,14 @@ public class UIController : MonoBehaviour
     private IEnumerator Wrong()
     {
         wrong.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         wrong.SetActive(false);
     }
     private IEnumerator Right()
     {
         correct.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        image.color = Color.white;
+        yield return new WaitForSeconds(1f);
         correct.SetActive(false);
         inputText.text = "";
         pokemonSelector.SelectPokemon();

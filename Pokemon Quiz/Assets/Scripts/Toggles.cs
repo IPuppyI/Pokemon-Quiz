@@ -11,6 +11,8 @@ public class Toggles : MonoBehaviour
     [SerializeField] private Toggle[] toggles;
     private int toggleCount;
     private bool togglesEnabled;
+    [SerializeField] private Color disabled;
+    [SerializeField] private Color enabled;
 
     private void OnEnable()
     {
@@ -41,6 +43,7 @@ public class Toggles : MonoBehaviour
                 if (toggle.isOn)
                 {
                     toggle.interactable = false;
+                    toggle.graphic.color = disabled;
                 }
             }
             togglesEnabled = false;
@@ -50,6 +53,7 @@ public class Toggles : MonoBehaviour
             foreach (Toggle toggle in toggles)
             {
                 toggle.interactable = true;
+                toggle.graphic.color = enabled;
             }
             togglesEnabled = true;
         }

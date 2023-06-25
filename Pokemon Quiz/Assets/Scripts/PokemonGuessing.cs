@@ -7,7 +7,7 @@ public class PokemonGuessing : MonoBehaviour
 {
     [SerializeField] private PokemonSelector pokemonSelector;
     [SerializeField] private TextMeshProUGUI input;
-    private float threshold = 0.95f;
+    private float threshold;
 
     public bool CheckAnswer()
     {

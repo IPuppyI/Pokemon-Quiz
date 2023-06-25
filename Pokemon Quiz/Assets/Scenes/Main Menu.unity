@@ -1262,6 +1262,11 @@ MonoBehaviour:
   correct: {fileID: 0}
   wrong: {fileID: 0}
   inputText: {fileID: 0}
+  thresholdSlider: {fileID: 0}
+  image: {fileID: 0}
+  main: {fileID: 0}
+  gens: {fileID: 0}
+  extra: {fileID: 0}
 --- !u!4 &1505851164
 Transform:
   m_ObjectHideFlags: 0
