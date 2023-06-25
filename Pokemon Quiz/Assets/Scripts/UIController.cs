@@ -29,20 +29,17 @@ public class UIController : MonoBehaviour
         }
         if (toggles != null)
         {
-            toggles.SetGenToggles(gameManager.GetGenToggles());
-            toggles.SetSilhouettesToggle(gameManager.GetSilhouettesToggle());
-            toggles.SetToggleCount(gameManager.GetToggleCount());
-            toggles.SetTogglesEnabled(gameManager.GetTogglesEnabled());
+            toggles.SetOptionsConfig(gameManager.GetOptionsConfig());
         }
         if (thresholdSlider != null)
         {
             thresholdSlider.minValue = 0.75f;
             thresholdSlider.maxValue = 1f;
-            thresholdSlider.value = gameManager.GetThreshold();
+            thresholdSlider.value = gameManager.GetOptionsConfig().threshold;
         }
         if (pokemonGuessing != null)
         {
-            pokemonGuessing.SetThreshold(gameManager.GetThreshold());
+            pokemonGuessing.SetThreshold(gameManager.GetOptionsConfig().threshold);
         }
     }
 
@@ -59,11 +56,9 @@ public class UIController : MonoBehaviour
     // Options Menu Buttons
     public void BackButton()
     {
-        gameManager.SetGenToggles(toggles.GetGenToggles());
-        gameManager.SetSilhouettesToggle(toggles.GetSilhouettesToggle());
-        gameManager.SetToggleCount(toggles.GetToggleCount());
-        gameManager.SetTogglesEnabled(toggles.GetTogglesEnabled());
+        gameManager.SetOptionsConfig(toggles.GetOptionsConfig());
         gameManager.SetThreshold(thresholdSlider.value);
+        OptionsSave.Save(gameManager.GetOptionsConfig(), "OptionsConfig.json");
         gameManager.ReorganizeActiveGens();
         SceneManager.LoadScene(0);
     }
