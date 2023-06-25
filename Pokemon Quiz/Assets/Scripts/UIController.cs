@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject wrong;
     [SerializeField] private TMP_InputField inputText;
     [SerializeField] private Slider thresholdSlider;
+    [SerializeField] private TextMeshProUGUI sliderValueText;
     [SerializeField] private Image image;
     [SerializeField] private GameObject main;
     [SerializeField] private GameObject gens;
@@ -33,13 +34,19 @@ public class UIController : MonoBehaviour
         }
         if (thresholdSlider != null)
         {
-            thresholdSlider.minValue = 0.75f;
-            thresholdSlider.maxValue = 1f;
             thresholdSlider.value = gameManager.GetOptionsConfig().threshold;
         }
         if (pokemonGuessing != null)
         {
             pokemonGuessing.SetThreshold(gameManager.GetOptionsConfig().threshold);
+        }
+    }
+
+    private void Update()
+    {
+        if (thresholdSlider != null)
+        {
+            sliderValueText.text = "" + (thresholdSlider.value / 100);
         }
     }
 

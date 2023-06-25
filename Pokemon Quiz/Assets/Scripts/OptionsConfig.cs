@@ -9,5 +9,5 @@ public class OptionsConfig
     public bool silhouettes = true;
     public bool togglesEnabled = true;
     public int toggleCount = 10;
-    public float threshold = 0.95f;
+    public float threshold = 95f;
 }
