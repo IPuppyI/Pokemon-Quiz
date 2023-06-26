@@ -11,29 +11,17 @@ public class PokemonGuessing : MonoBehaviour
 
     public bool CheckAnswer()
     {
-        int i = 0;
-        int numCorrect = 0;
         string pokemonName = pokemonSelector.GetPokemonInfo().name.ToLower();
-        string inputText = input.text.ToLower();
-        char[] temp = pokemonName.ToCharArray();
-        foreach (char character in inputText)
-        {
-            if (i > pokemonName.Length - 1)
-            {
-                Debug.Log("Over Index"); //Remove this later
-                break;
-            }
-            if (character.Equals(temp[i]))
-            {
-                numCorrect++;
-            }
-            i++;
-        }
+        string inputText = input.text.ToLower().Remove(input.text.Length - 1, 1);
+        int distance = LevenshteinDistance.Calculate(inputText, pokemonName);
         Debug.Log(pokemonName); //Remove this later
         Debug.Log(inputText); //Remove this later
-        Debug.Log(numCorrect + "/" + temp.Length); //Remove this later
-        Debug.Log((float)numCorrect / (float)temp.Length); //Remove this later
-        if (((float)numCorrect / (float)temp.Length) >= threshold)
+        Debug.Log(distance); //Remove this later
+        Debug.Log(pokemonName.Length); //Remove this later
+        Debug.Log(inputText.Length); //Remove this later
+        Debug.Log(pokemonName.Length - distance + "/" + pokemonName.Length); //Remove this later
+        Debug.Log(((float)pokemonName.Length - distance) / (float)pokemonName.Length); //Remove this later
+        if (((float)pokemonName.Length - distance / (float)pokemonName.Length) >= threshold)
         {
             return true;
         }

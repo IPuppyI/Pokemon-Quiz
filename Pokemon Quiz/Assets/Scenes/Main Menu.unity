@@ -1263,6 +1263,7 @@ MonoBehaviour:
   wrong: {fileID: 0}
   inputText: {fileID: 0}
   thresholdSlider: {fileID: 0}
+  sliderValueText: {fileID: 0}
   image: {fileID: 0}
   main: {fileID: 0}
   gens: {fileID: 0}
