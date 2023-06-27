@@ -21,8 +21,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject main;
     [SerializeField] private GameObject gens;
     [SerializeField] private GameObject extra;
+    [SerializeField] private GameObject reset;
     [SerializeField] private GameObject outOfPokemon;
     private bool caught;
+    private bool confirm;
 
     private void Awake()
     {
@@ -97,6 +99,11 @@ public class UIController : MonoBehaviour
         extra.SetActive(false);
         main.SetActive(true);
     }
+    public void ResetBackButton()
+    {
+        reset.SetActive(false);
+        main.SetActive(true);
+    }
     public void GensButton()
     {
         main.SetActive(false);
@@ -106,6 +113,67 @@ public class UIController : MonoBehaviour
     {
         main.SetActive(false);
         extra.SetActive(true);
+    }
+    public void ResetButton()
+    {
+        main.SetActive(false);
+        reset.SetActive(true);
+    }
+
+    // Reset Menu Buttions
+    
+    public void ResetGen1Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen1Progress.json");
+    }
+    public void ResetGen2Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen2Progress.json");
+    }
+    public void ResetGen3Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen3Progress.json");
+    }
+    public void ResetGen4Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen4Progress.json");
+    }
+    public void ResetGen5Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen5Progress.json");
+    }
+    public void ResetGen6Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen6Progress.json");
+    }
+    public void ResetGen7Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen7Progress.json");
+    }
+    public void ResetGen8Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen8Progress.json");
+    }
+    public void ResetGen9Button()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen9Progress.json");
+    }
+    public void ResetArceusButton()
+    {
+        PokemonDataDelete.DeleteJsonFile("legendsArceusProgress.json");
+    }
+    public void ResetAllButton()
+    {
+        PokemonDataDelete.DeleteJsonFile("gen1Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen2Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen3Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen4Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen5Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen6Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen7Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen8Progress.json");
+        PokemonDataDelete.DeleteJsonFile("gen9Progress.json");
+        PokemonDataDelete.DeleteJsonFile("legendsArceusProgress.json");
     }
 
     // Play Screen Buttons
@@ -146,5 +214,15 @@ public class UIController : MonoBehaviour
         pokemonListsManager.RemoveItem(pokemonSelector.GetPokemonInfo().no);
         pokemonListsManager.SaveCurrentLists();
         pokemonSelector.SelectPokemon();
+    }
+
+    // Other
+    public void ConfirmButton()
+    {
+
+    }
+    public void DenyButton()
+    {
+
     }
 }
