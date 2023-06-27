@@ -8,7 +8,6 @@ public static class OptionsLoad
 
     public static void Load()
     {
-        // Load the OptionsConfig from JSON file
         optionsConfig = LoadOptionsConfigFromJson("OptionsConfig.json");
 
         if (optionsConfig == null)

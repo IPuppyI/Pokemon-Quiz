@@ -7,30 +7,30 @@ public class PokemonSelector : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] private PokemonImagesContainerSO pokemonImages;
-    [SerializeField] private JsonReader pokemonData;
     private PokemonInfo pokemonInfo;
     private GameManager gameManager;
+    private PokemonListsManager pokemonListsManager;
     private int index;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        pokemonListsManager = FindObjectOfType<PokemonListsManager>();
         SelectPokemon();
     }
 
     public void SelectPokemon()
     {
-        int index = GetIndex(gameManager.GetActiveGens());
-        pokemonInfo = pokemonData.GetPokemonByNum(index);
+        int index = GetIndex();
+        pokemonInfo = pokemonListsManager.SearchItem(index);
         Debug.Log(index); //Remove this later
         Debug.Log(pokemonInfo.ToString()); //Remove this later
-        GetImage(index);
+        GetImage(pokemonInfo.no - 1);
     }
 
-    private int GetIndex(List<Vector2> ranges)
+    private int GetIndex()
     {
-        int temp = Random.Range(0, ranges.Count);
-        return Random.Range((int)ranges[temp].x, (int)ranges[temp].y + 1) - 1;
+        return Random.Range(0, pokemonListsManager.GetReferencesCount());
     }
 
     private void GetImage(int index)

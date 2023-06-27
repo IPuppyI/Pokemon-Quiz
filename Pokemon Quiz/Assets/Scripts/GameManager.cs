@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PokemonSelector pokemonSelector;
-    private List<Vector2> activeGenerations = new List<Vector2>();
+    [SerializeField] private PokemonListsManager pokemonListsManager;
+    [SerializeField] private JsonReader jsonReader;
     [SerializeField] private Vector2[] generations;
+    [SerializeField] private string[] fileNames;
     private OptionsConfig optionsConfig;
 
     private void Start()
@@ -15,28 +17,30 @@ public class GameManager : MonoBehaviour
         OptionsLoad.Load();
         optionsConfig = OptionsLoad.GetOptionsConfig();
         ReorganizeActiveGens();
+        pokemonListsManager.SaveCurrentLists();
     }
 
     public void ReorganizeActiveGens()
     {
-        List<Vector2> temp = new List<Vector2>();
         for (int i = 0; i < 10; i++)
         {
             if (optionsConfig.genToggles[i] == true)
             {
-                temp.Add(generations[i]);
+                if (PokemonDataLoad.LoadJsonFile<PokemonInfo>(fileNames[i]) != null)
+                {
+                    pokemonListsManager.AddList(PokemonDataLoad.LoadJsonFile<PokemonInfo>(fileNames[i]));
+                }
+                else
+                {
+                    pokemonListsManager.AddList(jsonReader.pokemonLists.pokemonLists[i].Pokemon);
+                }
             }
         }
-        activeGenerations = temp;
     }
 
     public OptionsConfig GetOptionsConfig()
     {
         return optionsConfig;
-    }
-    public List<Vector2> GetActiveGens()
-    {
-        return activeGenerations;
     }
     public void SetOptionsConfig(OptionsConfig config)
     {

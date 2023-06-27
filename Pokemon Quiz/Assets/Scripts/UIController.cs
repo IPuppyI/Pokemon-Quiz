@@ -8,6 +8,7 @@ using TMPro;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private PokemonListsManager pokemonListsManager;
     [SerializeField] private Toggles toggles;
     [SerializeField] private PokemonGuessing pokemonGuessing;
     [SerializeField] private PokemonSelector pokemonSelector;
@@ -24,6 +25,7 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        pokemonListsManager = FindObjectOfType<PokemonListsManager>();
         if (gameManager == null)
         {
             return;
@@ -66,6 +68,7 @@ public class UIController : MonoBehaviour
         gameManager.SetOptionsConfig(toggles.GetOptionsConfig());
         gameManager.SetThreshold(thresholdSlider.value);
         OptionsSave.Save(gameManager.GetOptionsConfig(), "OptionsConfig.json");
+        pokemonListsManager.Clear();
         gameManager.ReorganizeActiveGens();
         SceneManager.LoadScene(0);
     }
@@ -125,6 +128,8 @@ public class UIController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         correct.SetActive(false);
         inputText.text = "";
+        pokemonListsManager.RemoveItem(pokemonSelector.GetPokemonInfo().no);
+        pokemonListsManager.SaveCurrentLists();
         pokemonSelector.SelectPokemon();
     }
 }

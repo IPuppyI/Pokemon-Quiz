@@ -1025,6 +1025,7 @@ MonoBehaviour:
   wrong: {fileID: 29655173}
   inputText: {fileID: 2129671523}
   thresholdSlider: {fileID: 0}
+  sliderValueText: {fileID: 0}
   image: {fileID: 496042873}
   main: {fileID: 0}
   gens: {fileID: 0}
@@ -1042,7 +1043,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &673013975
 GameObject:
@@ -1605,7 +1606,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264735648
 GameObject:
@@ -1888,7 +1889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 496042873}
   pokemonImages: {fileID: 11400000, guid: 93fb1af4ffc90a046acb8cc21f4e82b0, type: 2}
-  pokemonData: {fileID: 1800368629}
+  pokemonData: {fileID: 0}
 --- !u!4 &1439810691
 Transform:
   m_ObjectHideFlags: 0
@@ -2008,72 +2009,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1800368626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1800368628}
-  - component: {fileID: 1800368629}
-  m_Layer: 0
-  m_Name: Json Reader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1800368628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800368626}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 778.6049, y: 1630.5203, z: 2.0992184}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1800368629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800368626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a25bf6ce66ebf2458fd370208fd1147, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gen1: {fileID: 4900000, guid: a902435d3cf66bc4289c50cc042d4a3a, type: 3}
-  gen2: {fileID: 4900000, guid: f444bd4789a155247a47c839e7adc991, type: 3}
-  gen3: {fileID: 4900000, guid: 90b6d010abd4b594bbdacada14dbfa8a, type: 3}
-  gen4: {fileID: 4900000, guid: 43ede3a68746aab4caf4e7a5b4b4a55c, type: 3}
-  gen5: {fileID: 4900000, guid: 4fbc5f0bed35faa41b694c4a4f678312, type: 3}
-  gen6: {fileID: 4900000, guid: d2f1d05473e6a5240814e20cb14dc2bf, type: 3}
-  gen7: {fileID: 4900000, guid: 4c60ecaab571dbc4a9f62fc0f9abd5fa, type: 3}
-  gen8: {fileID: 4900000, guid: 8308bc58b14545647afdb3ac769fd930, type: 3}
-  gen9: {fileID: 4900000, guid: d9588b3357e136a45a7b3baabc8ff139, type: 3}
-  legendsArceus: {fileID: 4900000, guid: 239fffddf009cba4282baae676147ec2, type: 3}
-  pokemonLists:
-    pokemonLists:
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
 --- !u!1 &1913203697
 GameObject:
   m_ObjectHideFlags: 0
