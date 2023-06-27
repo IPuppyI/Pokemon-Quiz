@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7112057254949609620
+--- !u!1 &870184743990061457
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7112057254949609626}
-  - component: {fileID: 7112057254949609621}
+  - component: {fileID: 870184743990061471}
+  - component: {fileID: 870184743990061456}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7112057254949609626
+--- !u!4 &870184743990061471
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7112057254949609620}
+  m_GameObject: {fileID: 870184743990061457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 642.28766, y: 1660.2269, z: -10.2678}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,18 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7112057254949609621
+--- !u!114 &870184743990061456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7112057254949609620}
+  m_GameObject: {fileID: 870184743990061457}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d12a720b957d8f478cbc4dddf1d0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pokemonListsManager: {fileID: 0}
+  jsonReader: {fileID: 0}
   generations:
   - {x: 1, y: 151}
   - {x: 152, y: 251}
@@ -55,3 +57,14 @@ MonoBehaviour:
   - {x: 810, y: 898}
   - {x: 899, y: 905}
   - {x: 906, y: 1010}
+  fileNames:
+  - gen1Progress.json
+  - gen2Progress.json
+  - gen3Progress.json
+  - gen4Progress.json
+  - gen5Progress.json
+  - gen6Progress.json
+  - gen7Progress.json
+  - gen8Progress.json
+  - legendsArceusProgress.json
+  - gen9Progress.json

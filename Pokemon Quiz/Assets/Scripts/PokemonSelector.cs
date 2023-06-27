@@ -22,15 +22,31 @@ public class PokemonSelector : MonoBehaviour
     public void SelectPokemon()
     {
         int index = GetIndex();
-        pokemonInfo = pokemonListsManager.SearchItem(index);
-        Debug.Log(index); //Remove this later
-        Debug.Log(pokemonInfo.ToString()); //Remove this later
-        GetImage(pokemonInfo.no - 1);
+        if (index == -1)
+        {
+            GetImage(1010);
+            image.color = Color.white;
+            pokemonInfo = new PokemonInfo(-1, "OutOfPokemon");
+        }
+        else 
+        { 
+            pokemonInfo = pokemonListsManager.SearchItem(index);
+            Debug.Log(index); //Remove this later
+            Debug.Log(pokemonInfo.ToString()); //Remove this later
+            GetImage(pokemonInfo.no - 1);
+        }
     }
 
     private int GetIndex()
     {
-        return Random.Range(0, pokemonListsManager.GetReferencesCount());
+        if (pokemonListsManager.GetReferencesCount() > 0)
+        {
+            return Random.Range(0, pokemonListsManager.GetReferencesCount());
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     private void GetImage(int index)

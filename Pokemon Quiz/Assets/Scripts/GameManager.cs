@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private PokemonSelector pokemonSelector;
-    [SerializeField] private PokemonListsManager pokemonListsManager;
-    [SerializeField] private JsonReader jsonReader;
-    [SerializeField] private Vector2[] generations;
+    private PokemonListsManager pokemonListsManager;
+    private JsonReader jsonReader;
     [SerializeField] private string[] fileNames;
     private OptionsConfig optionsConfig;
 
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        if (FindObjectOfType<JsonReader>() != null)
+        {
+            jsonReader = FindObjectOfType<JsonReader>();
+        }
+        if (FindObjectOfType<PokemonListsManager>() != null)
+        {
+            pokemonListsManager = FindObjectOfType<PokemonListsManager>();
+        }
         OptionsLoad.Load();
         optionsConfig = OptionsLoad.GetOptionsConfig();
         ReorganizeActiveGens();

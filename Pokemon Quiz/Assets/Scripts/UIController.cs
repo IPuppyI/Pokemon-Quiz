@@ -21,6 +21,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject main;
     [SerializeField] private GameObject gens;
     [SerializeField] private GameObject extra;
+    [SerializeField] private GameObject outOfPokemon;
+    private bool caught;
 
     private void Awake()
     {
@@ -44,11 +46,24 @@ public class UIController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        caught = false;
+    }
+
     private void Update()
     {
         if (thresholdSlider != null)
         {
             sliderValueText.text = "" + (thresholdSlider.value / 100);
+        }
+        if (pokemonSelector != null)
+        {
+            if (pokemonSelector.GetPokemonInfo().no == -1 && !caught)
+            {
+                outOfPokemon.SetActive(true);
+                caught = true;
+            }
         }
     }
 
