@@ -20,8 +20,10 @@ public class PokemonGuessing : MonoBehaviour
         Debug.Log(pokemonName.Length); //Remove this later
         Debug.Log(inputText.Length); //Remove this later
         Debug.Log(pokemonName.Length - distance + "/" + pokemonName.Length); //Remove this later
+        Debug.Log(threshold); //Remove this later
         Debug.Log(((float)pokemonName.Length - distance) / (float)pokemonName.Length); //Remove this later
-        if (((float)pokemonName.Length - distance / (float)pokemonName.Length) >= threshold)
+        Debug.Log((((float)pokemonName.Length - distance) / (float)pokemonName.Length) >= threshold);
+        if ((((float)pokemonName.Length - distance) / (float)pokemonName.Length) >= threshold)
         {
             return true;
         }
