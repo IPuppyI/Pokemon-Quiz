@@ -11,6 +11,7 @@ public class PokemonSelector : MonoBehaviour
     private GameManager gameManager;
     private PokemonListsManager pokemonListsManager;
     private int index;
+    private int lastIndex;
 
     private const int MissingNo = 1010;
 
@@ -24,6 +25,10 @@ public class PokemonSelector : MonoBehaviour
     public void SelectPokemon()
     {
         int index = GetIndex();
+        if (pokemonListsManager.GetReferencesCount() > 1)
+        {
+            while (index == lastIndex) { index = GetIndex(); }
+        }
         if (index == -1)
         {
             GetImage(MissingNo);
@@ -35,6 +40,7 @@ public class PokemonSelector : MonoBehaviour
             pokemonInfo = pokemonListsManager.SearchItem(index);
             GetImage(pokemonInfo.no - 1);
         }
+        lastIndex = index;
     }
 
     private int GetIndex()
