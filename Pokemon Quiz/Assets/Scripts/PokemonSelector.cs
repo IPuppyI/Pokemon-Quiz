@@ -31,8 +31,6 @@ public class PokemonSelector : MonoBehaviour
         else 
         { 
             pokemonInfo = pokemonListsManager.SearchItem(index);
-            Debug.Log(index); //Remove this later
-            Debug.Log(pokemonInfo.ToString()); //Remove this later
             GetImage(pokemonInfo.no - 1);
         }
     }
