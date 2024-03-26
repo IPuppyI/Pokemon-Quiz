@@ -1,0 +1,5 @@
+G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/.utmp/RelWithDebInfo/713h42o1/armeabi-v7a/CMakeFiles/edit_cache.dir
+G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/.utmp/RelWithDebInfo/713h42o1/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/.utmp/RelWithDebInfo/713h42o1/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/.utmp/RelWithDebInfo/713h42o1/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/.utmp/RelWithDebInfo/713h42o1/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir
