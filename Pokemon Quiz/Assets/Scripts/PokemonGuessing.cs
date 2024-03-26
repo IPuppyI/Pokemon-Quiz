@@ -13,6 +13,8 @@ public class PokemonGuessing : MonoBehaviour
     {
         string pokemonName = pokemonSelector.GetPokemonInfo().name.ToLower();
         string inputText = input.text.ToLower().Remove(input.text.Length - 1, 1);
+        inputText = inputText.Replace(" ", "");
+        pokemonName = pokemonName.Replace(" ", "");
         int distance = LevenshteinDistance.Calculate(inputText, pokemonName);
         return (CheckName(pokemonName, distance));
     }

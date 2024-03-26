@@ -12,10 +12,12 @@ public class PokemonSelector : MonoBehaviour
     private PokemonListsManager pokemonListsManager;
     private int index;
 
+    private const int MissingNo = 1010;
+
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        pokemonListsManager = FindObjectOfType<PokemonListsManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
+        pokemonListsManager = FindFirstObjectByType<PokemonListsManager>();
         SelectPokemon();
     }
 
@@ -24,7 +26,7 @@ public class PokemonSelector : MonoBehaviour
         int index = GetIndex();
         if (index == -1)
         {
-            GetImage(1010);
+            GetImage(MissingNo);
             image.color = Color.white;
             pokemonInfo = new PokemonInfo(-1, "OutOfPokemon");
         }

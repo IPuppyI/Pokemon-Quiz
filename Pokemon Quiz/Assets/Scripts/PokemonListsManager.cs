@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PokemonListsManager : MonoBehaviour
 {
+    private const int Gen1 = 152;
+    private const int Gen2 = 252;
+    private const int Gen3 = 387;
+    private const int gen4 = 494;
+    private const int Gen5 = 650;
+    private const int Gen6 = 722;
+    private const int Gen7 = 808;
+    private const int Gen8 = 899;
+    private const int LegendsArceus = 906;
     private List<List<PokemonInfo>> dataLists = new List<List<PokemonInfo>>();
     private List<PokemonInfo> references = new List<PokemonInfo>();
 
@@ -55,31 +64,31 @@ public class PokemonListsManager : MonoBehaviour
             }
             switch (dataList[0].no)
             {
-                case < 152:
+                case < Gen1:
                     PokemonDataSave.SaveListAsJson(dataList, "gen1Progress.json");
                     break;
-                case < 252:
+                case < Gen2:
                     PokemonDataSave.SaveListAsJson(dataList, "gen2Progress.json");
                     break;
-                case < 387:
+                case < Gen3:
                     PokemonDataSave.SaveListAsJson(dataList, "gen3Progress.json");
                     break;
-                case < 494:
+                case < gen4:
                     PokemonDataSave.SaveListAsJson(dataList, "gen4Progress.json");
                     break;
-                case < 650:
+                case < Gen5:
                     PokemonDataSave.SaveListAsJson(dataList, "gen5Progress.json");
                     break;
-                case < 722:
+                case < Gen6:
                     PokemonDataSave.SaveListAsJson(dataList, "gen6Progress.json");
                     break;
-                case < 808:
+                case < Gen7:
                     PokemonDataSave.SaveListAsJson(dataList, "gen7Progress.json");
                     break;
-                case < 899:
+                case < Gen8:
                     PokemonDataSave.SaveListAsJson(dataList, "gen8Progress.json");
                     break;
-                case < 906:
+                case < LegendsArceus:
                     PokemonDataSave.SaveListAsJson(dataList, "legendsArceusProgress.json");
                     break;
                 default:

@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        if (FindObjectOfType<JsonReader>() != null)
+        if (FindFirstObjectByType<JsonReader>() != null)
         {
-            jsonReader = FindObjectOfType<JsonReader>();
+            jsonReader = FindFirstObjectByType<JsonReader>();
         }
-        if (FindObjectOfType<PokemonListsManager>() != null)
+        if (FindFirstObjectByType<PokemonListsManager>() != null)
         {
-            pokemonListsManager = FindObjectOfType<PokemonListsManager>();
+            pokemonListsManager = FindFirstObjectByType<PokemonListsManager>();
         }
         OptionsLoad.Load();
         optionsConfig = OptionsLoad.GetOptionsConfig();

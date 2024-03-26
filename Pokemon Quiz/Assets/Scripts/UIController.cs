@@ -31,8 +31,8 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        pokemonListsManager = FindObjectOfType<PokemonListsManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
+        pokemonListsManager = FindFirstObjectByType<PokemonListsManager>();
         if (gameManager == null)
         {
             return;

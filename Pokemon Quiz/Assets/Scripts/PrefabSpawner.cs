@@ -8,11 +8,11 @@ public class PrefabSpawner : MonoBehaviour
     [SerializeField] private GameObject pokemonListsManager;
     void Start()
     {
-        if (FindObjectOfType<GameManager>() == null)
+        if (FindFirstObjectByType<GameManager>() == null)
         {
             Instantiate(gameManager);
         }
-        if(FindObjectOfType<PokemonListsManager>() == null)
+        if(FindFirstObjectByType<PokemonListsManager>() == null)
         {
             Instantiate(pokemonListsManager);
         }
