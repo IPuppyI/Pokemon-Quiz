@@ -1,3 +1,6 @@
 # ninja log v5
 1	88	7331284395821270	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	d94a452516f91f6f
 88	223	7331284396901736	G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/713h42o1/obj/armeabi-v7a/libswappywrapper.so	25868880fc6cb1d5
+2	169	7503871927384350	build.ninja	b69be88a100d3f51
+1	68	7503871928533330	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	d94a452516f91f6f
+69	225	7503871929624592	G:/Unity Projects/Pokemon-Quiz/Pokemon Quiz/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/713h42o1/obj/armeabi-v7a/libswappywrapper.so	25868880fc6cb1d5

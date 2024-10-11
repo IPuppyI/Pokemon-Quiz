@@ -11,5 +11,6 @@ public static class PokemonDataSave
         string filePath = Path.Combine(Application.persistentDataPath, fileName);
         string json = JsonConvert.SerializeObject(list, Formatting.Indented);
         File.WriteAllText(filePath, json);
+        Debug.Log("Pokemon Data saved to: " + filePath);
     }
 }
