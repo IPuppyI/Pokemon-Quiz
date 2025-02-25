@@ -88,7 +88,7 @@ public class UIController : MonoBehaviour
     {
         gameManager.SetOptionsConfig(toggles.GetOptionsConfig());
         gameManager.SetThreshold(thresholdSlider.value);
-        OptionsSave.Save(gameManager.GetOptionsConfig(), "OptionsConfig.json");
+        OptionsManager.Save(gameManager.GetOptionsConfig(), "OptionsConfig.json");
         pokemonListsManager.Clear();
         gameManager.ReorganizeActiveGens();
         SceneManager.LoadScene(0);
@@ -126,19 +126,17 @@ public class UIController : MonoBehaviour
 
     // Reset Menu Buttions
     
-    public void ResetGen1Button()
+    public async void ResetGen1Button()
     {
-        
-        //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen1Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data");
+        DeleteData("gen1Progress.json");
+        confirm = false;
     }
     public void ResetGen2Button()
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen2Progress.json");
+            PokemonDataManager.Delete("gen2Progress.json");
         //}
         //confirm = false;
     }
@@ -146,7 +144,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen3Progress.json");
+            PokemonDataManager.Delete("gen3Progress.json");
         //}
         //confirm = false;
     }
@@ -154,7 +152,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen4Progress.json");
+            PokemonDataManager.Delete("gen4Progress.json");
         //}
         //confirm = false;
     }
@@ -162,7 +160,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen5Progress.json");
+            PokemonDataManager.Delete("gen5Progress.json");
         //}
         //confirm = false;
     }
@@ -170,7 +168,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen6Progress.json");
+            PokemonDataManager.Delete("gen6Progress.json");
         //}
         //confirm = false;
     }
@@ -178,7 +176,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen7Progress.json");
+            PokemonDataManager.Delete("gen7Progress.json");
         //}
         //confirm = false;
     }
@@ -186,7 +184,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen8Progress.json");
+            PokemonDataManager.Delete("gen8Progress.json");
         //}
         //confirm = false;
     }
@@ -194,7 +192,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm){
-            PokemonDataDelete.DeleteJsonFile("gen9Progress.json");
+            PokemonDataManager.Delete("gen9Progress.json");
         //}
         //confirm = false;
     }
@@ -202,7 +200,7 @@ public class UIController : MonoBehaviour
     {
         
         //if (confirm) {
-        PokemonDataDelete.DeleteJsonFile("legendsArceusProgress.json");
+        PokemonDataManager.Delete("legendsArceusProgress.json");
         //}
         //confirm = false;
     }
@@ -211,16 +209,16 @@ public class UIController : MonoBehaviour
         //await Task.Run(() => OpenConfirmationWindow(""));
         //if (confirm) 
         //{
-            PokemonDataDelete.DeleteJsonFile("gen1Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen2Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen3Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen4Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen5Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen6Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen7Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen8Progress.json");
-            PokemonDataDelete.DeleteJsonFile("gen9Progress.json");
-            PokemonDataDelete.DeleteJsonFile("legendsArceusProgress.json");
+            PokemonDataManager.Delete("gen1Progress.json");
+            PokemonDataManager.Delete("gen2Progress.json");
+            PokemonDataManager.Delete("gen3Progress.json");
+            PokemonDataManager.Delete("gen4Progress.json");
+            PokemonDataManager.Delete("gen5Progress.json");
+            PokemonDataManager.Delete("gen6Progress.json");
+            PokemonDataManager.Delete("gen7Progress.json");
+            PokemonDataManager.Delete("gen8Progress.json");
+            PokemonDataManager.Delete("gen9Progress.json");
+            PokemonDataManager.Delete("legendsArceusProgress.json");
         //}
         
         //confirm = false;
@@ -282,13 +280,20 @@ public class UIController : MonoBehaviour
         confirmationWindow.gameObject.SetActive(false);
         confirm = false;
     }
-    public async void OpenConfirmationWindow(string context)
+    public void OpenConfirmationWindow(string context)
     {
         confirmationWindow.gameObject.SetActive(true);
         confirmationWindow.yesButton.onClick.AddListener(YesButton);
         confirmationWindow.noButton.onClick.AddListener(NoButton);
         confirmationWindow.contextText.text = context;
-        //await Task.Run(() => YesButton());
-        await Task.Yield();
+    }
+    private void DeleteData(string file)
+    {
+        if (confirm)
+        {
+            PokemonDataManager.Delete(file);
+            Debug.Log("Gen 1 deleted");
+        }
+        else Debug.Log("Gen 1 not deleted");
     }
 }

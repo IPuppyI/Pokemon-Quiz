@@ -65,34 +65,34 @@ public class PokemonListsManager : MonoBehaviour
             switch (dataList[0].no)
             {
                 case < Gen1:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen1Progress.json");
+                    PokemonDataManager.Save(dataList, "gen1Progress.json");
                     break;
                 case < Gen2:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen2Progress.json");
+                    PokemonDataManager.Save(dataList, "gen2Progress.json");
                     break;
                 case < Gen3:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen3Progress.json");
+                    PokemonDataManager.Save(dataList, "gen3Progress.json");
                     break;
                 case < gen4:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen4Progress.json");
+                    PokemonDataManager.Save(dataList, "gen4Progress.json");
                     break;
                 case < Gen5:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen5Progress.json");
+                    PokemonDataManager.Save(dataList, "gen5Progress.json");
                     break;
                 case < Gen6:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen6Progress.json");
+                    PokemonDataManager.Save(dataList, "gen6Progress.json");
                     break;
                 case < Gen7:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen7Progress.json");
+                    PokemonDataManager.Save(dataList, "gen7Progress.json");
                     break;
                 case < Gen8:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen8Progress.json");
+                    PokemonDataManager.Save(dataList, "gen8Progress.json");
                     break;
                 case < LegendsArceus:
-                    PokemonDataSave.SaveListAsJson(dataList, "legendsArceusProgress.json");
+                    PokemonDataManager.Save(dataList, "legendsArceusProgress.json");
                     break;
                 default:
-                    PokemonDataSave.SaveListAsJson(dataList, "gen9Progress.json");
+                    PokemonDataManager.Save(dataList, "gen9Progress.json");
                     break;
             }
         }
@@ -102,16 +102,16 @@ public class PokemonListsManager : MonoBehaviour
     {
         List<List<PokemonInfo>> temp = new List<List<PokemonInfo>>();
 
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen1Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen2Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen3Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen4Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen5Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen6Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen7Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen8Progress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("legendsArceusProgress.json"));
-        temp.Add(PokemonDataLoad.LoadJsonFile<PokemonInfo>("gen9Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen1Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen2Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen3Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen4Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen5Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen6Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen7Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen8Progress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("legendsArceusProgress.json"));
+        temp.Add(PokemonDataManager.Load<PokemonInfo>("gen9Progress.json"));
 
         int tempCount = 9999;
         int tempIndex = 0;
@@ -126,34 +126,34 @@ public class PokemonListsManager : MonoBehaviour
         switch (listIndex)
         {
             case 0:
-                PokemonDataSave.SaveListAsJson(dataList, "gen1Progress.json");
+                PokemonDataManager.Save(dataList, "gen1Progress.json");
                 break;
             case 1:
-                PokemonDataSave.SaveListAsJson(dataList, "gen2Progress.json");
+                PokemonDataManager.Save(dataList, "gen2Progress.json");
                 break;
             case 2:
-                PokemonDataSave.SaveListAsJson(dataList, "gen3Progress.json");
+                PokemonDataManager.Save(dataList, "gen3Progress.json");
                 break;
             case 3:
-                PokemonDataSave.SaveListAsJson(dataList, "gen4Progress.json");
+                PokemonDataManager.Save(dataList, "gen4Progress.json");
                 break;
             case 4:
-                PokemonDataSave.SaveListAsJson(dataList, "gen5Progress.json");
+                PokemonDataManager.Save(dataList, "gen5Progress.json");
                 break;
             case 5:
-                PokemonDataSave.SaveListAsJson(dataList, "gen6Progress.json");
+                PokemonDataManager.Save(dataList, "gen6Progress.json");
                 break;
             case 6:
-                PokemonDataSave.SaveListAsJson(dataList, "gen7Progress.json");
+                PokemonDataManager.Save(dataList, "gen7Progress.json");
                 break;
             case 7:
-                PokemonDataSave.SaveListAsJson(dataList, "gen8Progress.json");
+                PokemonDataManager.Save(dataList, "gen8Progress.json");
                 break;
             case 8:
-                PokemonDataSave.SaveListAsJson(dataList, "legendsArceusProgress.json");
+                PokemonDataManager.Save(dataList, "legendsArceusProgress.json");
                 break;
             case 9:
-                PokemonDataSave.SaveListAsJson(dataList, "gen9Progress.json");
+                PokemonDataManager.Save(dataList, "gen9Progress.json");
                 break;
         }
     }

@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
         {
             pokemonListsManager = FindFirstObjectByType<PokemonListsManager>();
         }
-        OptionsLoad.Load();
-        optionsConfig = OptionsLoad.GetOptionsConfig();
+        OptionsManager.Load();
+        optionsConfig = OptionsManager.GetOptionsConfig();
         ReorganizeActiveGens();
         pokemonListsManager.SaveCurrentLists();
     }
@@ -32,9 +32,9 @@ public class GameManager : MonoBehaviour
         {
             if (optionsConfig.genToggles[i] == true)
             {
-                if (PokemonDataLoad.LoadJsonFile<PokemonInfo>(fileNames[i]) != null)
+                if (PokemonDataManager.Load<PokemonInfo>(fileNames[i]) != null)
                 {
-                    pokemonListsManager.AddList(PokemonDataLoad.LoadJsonFile<PokemonInfo>(fileNames[i]));
+                    pokemonListsManager.AddList(PokemonDataManager.Load<PokemonInfo>(fileNames[i]));
                 }
                 else
                 {
