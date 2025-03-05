@@ -27,7 +27,8 @@ public class UIController : MonoBehaviour
     [SerializeField] private ConfirmationWindow confirmationWindow;
     private bool caught;
     private bool checking;
-    private bool confirm;
+
+    private string FileName;
 
     private void Awake()
     {
@@ -73,7 +74,7 @@ public class UIController : MonoBehaviour
         }
     }
 
-    // Main Menu Buttons
+    #region Main Menu Buttons
     public void OptionsButton()
     {
         SceneManager.LoadScene(2);
@@ -82,8 +83,9 @@ public class UIController : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    #endregion
 
-    // Options Menu Buttons
+    #region Options Menu Buttons
     public void BackButton()
     {
         gameManager.SetOptionsConfig(toggles.GetOptionsConfig());
@@ -123,108 +125,57 @@ public class UIController : MonoBehaviour
         main.SetActive(false);
         reset.SetActive(true);
     }
+    #endregion
 
-    // Reset Menu Buttions
-    
-    public async void ResetGen1Button()
+    #region Reset Menu Buttions
+
+    public void ResetGen1Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data");
-        DeleteData("gen1Progress.json");
-        confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data", "gen1Progress.json");
     }
     public void ResetGen2Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen2Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 2 Pokemon data", "gen2Progress.json");
     }
     public void ResetGen3Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen3Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 3 Pokemon data", "gen3Progress.json");
     }
     public void ResetGen4Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen4Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 4 Pokemon data", "gen4Progress.json");
     }
     public void ResetGen5Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen5Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 5 Pokemon data", "gen5Progress.json");
     }
     public void ResetGen6Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen6Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 6 Pokemon data", "gen6Progress.json");
     }
     public void ResetGen7Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen7Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 7 Pokemon data", "gen7Progress.json");
     }
     public void ResetGen8Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen8Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 8 Pokemon data", "gen8Progress.json");
     }
     public void ResetGen9Button()
     {
-        
-        //if (confirm){
-            PokemonDataManager.Delete("gen9Progress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Gen 9 Pokemon data", "gen9Progress.json");
     }
     public void ResetArceusButton()
     {
-        
-        //if (confirm) {
-        PokemonDataManager.Delete("legendsArceusProgress.json");
-        //}
-        //confirm = false;
+        OpenConfirmationWindow("This will delete your Legends Arceus Pokemon data", "legendsArceusProgress.json");
     }
     public void ResetAllButton()
     {
-        //await Task.Run(() => OpenConfirmationWindow(""));
-        //if (confirm) 
-        //{
-            PokemonDataManager.Delete("gen1Progress.json");
-            PokemonDataManager.Delete("gen2Progress.json");
-            PokemonDataManager.Delete("gen3Progress.json");
-            PokemonDataManager.Delete("gen4Progress.json");
-            PokemonDataManager.Delete("gen5Progress.json");
-            PokemonDataManager.Delete("gen6Progress.json");
-            PokemonDataManager.Delete("gen7Progress.json");
-            PokemonDataManager.Delete("gen8Progress.json");
-            PokemonDataManager.Delete("gen9Progress.json");
-            PokemonDataManager.Delete("legendsArceusProgress.json");
-        //}
-        
-        //confirm = false;
+        OpenConfirmationWindow("This will delete ALL your Pokemon data", "All");
     }
+    #endregion
 
-    // Play Screen Buttons
+    #region Play Screen Buttons
     public void SubmitButton()
     {
         if (pokemonGuessing.CheckAnswer())
@@ -268,32 +219,62 @@ public class UIController : MonoBehaviour
             checking = false;
         }
     }
+    #endregion
 
-    // Other
+    #region Other
     public void YesButton()
     {
+        DeleteData(FileName);
+        confirmationWindow.yesButton.onClick.RemoveListener(YesButton);
+        confirmationWindow.noButton.onClick.RemoveListener(NoButton);
         confirmationWindow.gameObject.SetActive(false);
-        confirm = true;
+        FileName = null;
+        Debug.Log("Yes button clicked.");
     }
     public void NoButton()
     {
+        confirmationWindow.yesButton.onClick.RemoveListener(YesButton);
+        confirmationWindow.noButton.onClick.RemoveListener(NoButton);
         confirmationWindow.gameObject.SetActive(false);
-        confirm = false;
+        FileName = null;
+        Debug.Log("No button clicked.");
     }
-    public void OpenConfirmationWindow(string context)
+    public void OpenConfirmationWindow(string context, string fileName)
     {
         confirmationWindow.gameObject.SetActive(true);
         confirmationWindow.yesButton.onClick.AddListener(YesButton);
         confirmationWindow.noButton.onClick.AddListener(NoButton);
         confirmationWindow.contextText.text = context;
+        FileName = fileName;
+        Debug.Log("Confirmation window opened | " + FileName);
     }
     private void DeleteData(string file)
     {
-        if (confirm)
+        try
         {
-            PokemonDataManager.Delete(file);
-            Debug.Log("Gen 1 deleted");
+            if (file == "All")
+            {
+                PokemonDataManager.Delete("gen1Progress.json");
+                PokemonDataManager.Delete("gen2Progress.json");
+                PokemonDataManager.Delete("gen3Progress.json");
+                PokemonDataManager.Delete("gen4Progress.json");
+                PokemonDataManager.Delete("gen5Progress.json");
+                PokemonDataManager.Delete("gen6Progress.json");
+                PokemonDataManager.Delete("gen7Progress.json");
+                PokemonDataManager.Delete("gen8Progress.json");
+                PokemonDataManager.Delete("gen9Progress.json");
+                PokemonDataManager.Delete("legendsArceusProgress.json");
+            }
+            else
+            {
+                PokemonDataManager.Delete(file);
+                Debug.Log($"{file} deleted.");
+            }
         }
-        else Debug.Log("Gen 1 not deleted");
+        catch
+        {
+            Debug.Log($"{file} not deleted.");
+        }
     }
+    #endregion
 }
