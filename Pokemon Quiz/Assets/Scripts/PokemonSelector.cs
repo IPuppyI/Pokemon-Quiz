@@ -10,10 +10,9 @@ public class PokemonSelector : MonoBehaviour
     private PokemonInfo pokemonInfo;
     private GameManager gameManager;
     private PokemonListsManager pokemonListsManager;
-    private int index;
     private int lastIndex;
 
-    private const int MissingNo = 1010;
+    private const int MISSINGNOGEN3 = 0;
 
     void Start()
     {
@@ -31,14 +30,14 @@ public class PokemonSelector : MonoBehaviour
         }
         if (index == -1)
         {
-            GetImage(MissingNo);
+            GetImage(MISSINGNOGEN3);
             image.color = Color.white;
             pokemonInfo = new PokemonInfo(-1, "OutOfPokemon");
         }
         else 
         { 
             pokemonInfo = pokemonListsManager.SearchItem(index);
-            GetImage(pokemonInfo.no - 1);
+            GetImage(pokemonInfo.no);
         }
         lastIndex = index;
     }

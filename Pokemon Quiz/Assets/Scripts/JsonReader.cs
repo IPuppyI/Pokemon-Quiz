@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class JsonReader : MonoBehaviour
 {
@@ -15,19 +16,7 @@ public class JsonReader : MonoBehaviour
     [SerializeField] private TextAsset gen9;
     [SerializeField] private TextAsset legendsArceus;
 
-    [System.Serializable]
-    public class PokemonList
-    {
-        public List<PokemonInfo> Pokemon;
-    }
-
-    [System.Serializable]
-    public class PokemonLists
-    {
-        public PokemonList[] pokemonLists = new PokemonList[10];
-    }
-
-    public PokemonLists pokemonLists = new PokemonLists();
+    public PokemonLists dataLists = new PokemonLists();
 
     void Awake()
     {
@@ -36,15 +25,45 @@ public class JsonReader : MonoBehaviour
 
     public void SetLists()
     {
-        pokemonLists.pokemonLists[0] = JsonUtility.FromJson<PokemonList>(gen1.text);
-        pokemonLists.pokemonLists[1] = JsonUtility.FromJson<PokemonList>(gen2.text);
-        pokemonLists.pokemonLists[2] = JsonUtility.FromJson<PokemonList>(gen3.text);
-        pokemonLists.pokemonLists[3] = JsonUtility.FromJson<PokemonList>(gen4.text);
-        pokemonLists.pokemonLists[4] = JsonUtility.FromJson<PokemonList>(gen5.text);
-        pokemonLists.pokemonLists[5] = JsonUtility.FromJson<PokemonList>(gen6.text);
-        pokemonLists.pokemonLists[6] = JsonUtility.FromJson<PokemonList>(gen7.text);
-        pokemonLists.pokemonLists[7] = JsonUtility.FromJson<PokemonList>(gen8.text);
-        pokemonLists.pokemonLists[8] = JsonUtility.FromJson<PokemonList>(legendsArceus.text);
-        pokemonLists.pokemonLists[9] = JsonUtility.FromJson<PokemonList>(gen9.text);
+        dataLists.pokemonGenLists["Gen1"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen1.text);
+        dataLists.pokemonGenLists["Gen2"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen2.text);
+        dataLists.pokemonGenLists["Gen3"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen3.text);
+        dataLists.pokemonGenLists["Gen4"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen4.text);
+        dataLists.pokemonGenLists["Gen5"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen5.text);
+        dataLists.pokemonGenLists["Gen6"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen6.text);
+        dataLists.pokemonGenLists["Gen7"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen7.text);
+        dataLists.pokemonGenLists["Gen8"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen8.text);
+        dataLists.pokemonGenLists["Gen9"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(gen9.text);
+        dataLists.pokemonGenLists["LegendsArceus"] = JsonConvert.DeserializeObject<List<PokemonInfo>>(legendsArceus.text);
+    }
+}
+
+[System.Serializable]
+public class PokemonLists
+{
+    public Dictionary<string, List<PokemonInfo>> pokemonGenLists;
+
+    public PokemonLists(bool empty = false)
+    {
+        if (!empty)
+        {
+            pokemonGenLists = new Dictionary<string, List<PokemonInfo>>()
+            {
+                { "Gen1", new List<PokemonInfo>() },
+                { "Gen2", new List <PokemonInfo>() },
+                { "Gen3", new List <PokemonInfo>() },
+                { "Gen4", new List <PokemonInfo>() },
+                { "Gen5", new List <PokemonInfo>() },
+                { "Gen6", new List <PokemonInfo>() },
+                { "Gen7", new List <PokemonInfo>() },
+                { "Gen8", new List <PokemonInfo>() },
+                { "Gen9", new List <PokemonInfo>() },
+                { "LegendsArceus", new List <PokemonInfo>() }
+            };
+        }
+        else
+        {
+            pokemonGenLists = new Dictionary<string, List<PokemonInfo>>();
+        }
     }
 }

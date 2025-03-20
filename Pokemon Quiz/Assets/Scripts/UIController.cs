@@ -131,43 +131,43 @@ public class UIController : MonoBehaviour
 
     public void ResetGen1Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data", "gen1Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data", Filenames.FileNames[0]);
     }
     public void ResetGen2Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 2 Pokemon data", "gen2Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 2 Pokemon data", Filenames.FileNames[1]);
     }
     public void ResetGen3Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 3 Pokemon data", "gen3Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 3 Pokemon data", Filenames.FileNames[2]);
     }
     public void ResetGen4Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 4 Pokemon data", "gen4Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 4 Pokemon data", Filenames.FileNames[3]);
     }
     public void ResetGen5Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 5 Pokemon data", "gen5Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 5 Pokemon data", Filenames.FileNames[4]);
     }
     public void ResetGen6Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 6 Pokemon data", "gen6Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 6 Pokemon data", Filenames.FileNames[5]);
     }
     public void ResetGen7Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 7 Pokemon data", "gen7Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 7 Pokemon data", Filenames.FileNames[6]);
     }
     public void ResetGen8Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 8 Pokemon data", "gen8Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 8 Pokemon data", Filenames.FileNames[7]);
     }
     public void ResetGen9Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 9 Pokemon data", "gen9Progress.json");
+        OpenConfirmationWindow("This will delete your Gen 9 Pokemon data", Filenames.FileNames[8]);
     }
     public void ResetArceusButton()
     {
-        OpenConfirmationWindow("This will delete your Legends Arceus Pokemon data", "legendsArceusProgress.json");
+        OpenConfirmationWindow("This will delete your Legends Arceus Pokemon data", Filenames.FileNames[9]);
     }
     public void ResetAllButton()
     {
@@ -254,16 +254,16 @@ public class UIController : MonoBehaviour
         {
             if (file == "All")
             {
-                PokemonDataManager.Delete("gen1Progress.json");
-                PokemonDataManager.Delete("gen2Progress.json");
-                PokemonDataManager.Delete("gen3Progress.json");
-                PokemonDataManager.Delete("gen4Progress.json");
-                PokemonDataManager.Delete("gen5Progress.json");
-                PokemonDataManager.Delete("gen6Progress.json");
-                PokemonDataManager.Delete("gen7Progress.json");
-                PokemonDataManager.Delete("gen8Progress.json");
-                PokemonDataManager.Delete("gen9Progress.json");
-                PokemonDataManager.Delete("legendsArceusProgress.json");
+                PokemonDataManager.Delete(Filenames.FileNames[0]);
+                PokemonDataManager.Delete(Filenames.FileNames[1]);
+                PokemonDataManager.Delete(Filenames.FileNames[2]);
+                PokemonDataManager.Delete(Filenames.FileNames[3]);
+                PokemonDataManager.Delete(Filenames.FileNames[4]);
+                PokemonDataManager.Delete(Filenames.FileNames[5]);
+                PokemonDataManager.Delete(Filenames.FileNames[6]);
+                PokemonDataManager.Delete(Filenames.FileNames[7]);
+                PokemonDataManager.Delete(Filenames.FileNames[8]);
+                PokemonDataManager.Delete(Filenames.FileNames[9]);
             }
             else
             {

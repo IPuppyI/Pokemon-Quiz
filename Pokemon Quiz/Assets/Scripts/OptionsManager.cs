@@ -10,9 +10,17 @@ public static class OptionsManager
 
     public static void Load()
     {
-        optionsConfig = LoadOptionsConfigFromJson("OptionsConfig.json");
+        try
+        {
+            string path = Path.Combine(Application.persistentDataPath, "OptionsConfig.json");
 
-        if (optionsConfig == null)
+            using (StreamReader streamReader = File.OpenText(path))
+            {
+                string jsonData = streamReader.ReadToEnd();
+                optionsConfig =  JsonConvert.DeserializeObject<OptionsConfig>(jsonData);
+            }
+        }
+        catch
         {
             Debug.LogWarning("Failed to load OptionsConfig from JSON file. Creating default.");
             optionsConfig = new OptionsConfig();
@@ -36,24 +44,5 @@ public static class OptionsManager
     public static OptionsConfig GetOptionsConfig()
     {
         return optionsConfig;
-    }
-
-    private static OptionsConfig LoadOptionsConfigFromJson(string filename)
-    {
-        string path = Path.Combine(Application.persistentDataPath, filename);
-
-        if (File.Exists(path))
-        {
-            using (StreamReader streamReader = File.OpenText(path))
-            {
-                string jsonData = streamReader.ReadToEnd();
-                return JsonConvert.DeserializeObject<OptionsConfig>(jsonData);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("JSON file not found: " + path);
-            return null;
-        }
     }
 }

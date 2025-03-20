@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870184743990061457}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 642.28766, y: 1660.2269, z: -10.2678}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &870184743990061456
 MonoBehaviour:
@@ -44,27 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d12a720b957d8f478cbc4dddf1d0eb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pokemonListsManager: {fileID: 0}
-  jsonReader: {fileID: 0}
-  generations:
-  - {x: 1, y: 151}
-  - {x: 152, y: 251}
-  - {x: 252, y: 386}
-  - {x: 387, y: 493}
-  - {x: 494, y: 649}
-  - {x: 650, y: 721}
-  - {x: 722, y: 802}
-  - {x: 810, y: 898}
-  - {x: 899, y: 905}
-  - {x: 906, y: 1010}
   fileNames:
-  - gen1Progress.json
-  - gen2Progress.json
-  - gen3Progress.json
-  - gen4Progress.json
-  - gen5Progress.json
-  - gen6Progress.json
-  - gen7Progress.json
-  - gen8Progress.json
-  - legendsArceusProgress.json
-  - gen9Progress.json
+  - gen1-Progress.json
+  - gen2-Progress.json
+  - gen3-Progress.json
+  - gen4-Progress.json
+  - gen5-Progress.json
+  - gen6-Progress.json
+  - gen7-Progress.json
+  - gen8-Progress.json
+  - legendsArceus-Progress.json
+  - gen9-Progress.json

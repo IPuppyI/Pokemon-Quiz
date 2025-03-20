@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PokemonImages
   m_EditorClassIdentifier: 
   pokemonImages:
+  - {fileID: 2800000, guid: 3e7b014a90010f74a8c4157a3207db14, type: 3}
   - {fileID: 2800000, guid: 4438b3138861037409c39dba90b0a11c, type: 3}
   - {fileID: 2800000, guid: b226c5c64214dd84c9f0c6e3629ced78, type: 3}
   - {fileID: 2800000, guid: 7110a5b508e76ae47a3cb1d4592f5b57, type: 3}
@@ -1023,4 +1024,3 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 04c3b8f3beab7d84c93fb79f92d43788, type: 3}
   - {fileID: 2800000, guid: 4404469c1fa092a4fb984858e8c8c08e, type: 3}
   - {fileID: 2800000, guid: 1c8285d4b4c574a43a1fc34a0b0d7a8e, type: 3}
-  - {fileID: 2800000, guid: 3e7b014a90010f74a8c4157a3207db14, type: 3}

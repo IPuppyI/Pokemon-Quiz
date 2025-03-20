@@ -162,19 +162,6 @@ public class Toggles : MonoBehaviour
     }
     public void Gen9Toggle()
     {
-        if (optionsConfig.genToggles[9])
-        {
-            optionsConfig.genToggles[9] = false;
-            optionsConfig.toggleCount--;
-        }
-        else
-        {
-            optionsConfig.genToggles[9] = true;
-            optionsConfig.toggleCount++;
-        }
-    }
-    public void ArceusToggle()
-    {
         if (optionsConfig.genToggles[8])
         {
             optionsConfig.genToggles[8] = false;
@@ -183,6 +170,19 @@ public class Toggles : MonoBehaviour
         else
         {
             optionsConfig.genToggles[8] = true;
+            optionsConfig.toggleCount++;
+        }
+    }
+    public void ArceusToggle()
+    {
+        if (optionsConfig.genToggles[9])
+        {
+            optionsConfig.genToggles[9] = false;
+            optionsConfig.toggleCount--;
+        }
+        else
+        {
+            optionsConfig.genToggles[9] = true;
             optionsConfig.toggleCount++;
         }
     }

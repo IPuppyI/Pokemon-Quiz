@@ -1,5 +1,4 @@
-{
-  "Pokemon": [
+[
     {
       "no": 1,
       "name": "Bulbasaur"
@@ -604,5 +603,4 @@
       "no": 151,
       "name": "Mew"
     }
-  ]
-}
+]

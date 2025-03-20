@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     private PokemonListsManager pokemonListsManager;
     private JsonReader jsonReader;
-    [SerializeField] private string[] fileNames;
     private OptionsConfig optionsConfig;
 
     private void Start()
@@ -28,17 +27,17 @@ public class GameManager : MonoBehaviour
 
     public void ReorganizeActiveGens()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < Filenames.FileNames.Length; i++)
         {
             if (optionsConfig.genToggles[i] == true)
             {
-                if (PokemonDataManager.Load<PokemonInfo>(fileNames[i]) != null)
+                try
                 {
-                    pokemonListsManager.AddList(PokemonDataManager.Load<PokemonInfo>(fileNames[i]));
+                    pokemonListsManager.AddList(Filenames.FileNames[i].Split('.', '-')[0], PokemonDataManager.Load(Filenames.FileNames[i]));
                 }
-                else
+                catch
                 {
-                    pokemonListsManager.AddList(jsonReader.pokemonLists.pokemonLists[i].Pokemon);
+                    pokemonListsManager.AddList(Filenames.FileNames[i].Split('.', '-')[0], jsonReader.dataLists.pokemonGenLists[Filenames.FileNames[i].Split('.', '-')[0]]);
                 }
             }
         }

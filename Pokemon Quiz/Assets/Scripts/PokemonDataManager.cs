@@ -13,7 +13,7 @@ public static class PokemonDataManager
         File.WriteAllText(filePath, json);
         Debug.Log("Pokemon Data saved to: " + filePath);
     }
-    public static List<PokemonInfo> Load<PokemonInfo>(string fileName)
+    public static List<PokemonInfo> Load(string fileName)
     {
         List<PokemonInfo> dataList = new List<PokemonInfo>();
 
@@ -28,7 +28,6 @@ public static class PokemonDataManager
             Debug.LogError("JSON file not found: " + fileName);
             return null;
         }
-
         return dataList;
     }
     public static void Delete(string fileName)
