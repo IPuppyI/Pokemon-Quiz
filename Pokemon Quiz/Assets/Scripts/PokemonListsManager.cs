@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PokemonListsManager : MonoBehaviour
 {
-    private const int Gen1 = 152;
+    /*private const int Gen1 = 152;
     private const int Gen2 = 252;
     private const int Gen3 = 387;
     private const int Gen4 = 494;
@@ -13,7 +13,7 @@ public class PokemonListsManager : MonoBehaviour
     private const int Gen6 = 722;
     private const int Gen7 = 808;
     private const int Gen8 = 899;
-    private const int LegendsArceus = 906;
+    private const int LegendsArceus = 906;*/
     private PokemonLists dataLists = new PokemonLists(empty:true);
     private List<PokemonInfo> references = new List<PokemonInfo>();
 
@@ -24,7 +24,7 @@ public class PokemonListsManager : MonoBehaviour
 
     public void AddList(string key, List<PokemonInfo> dataList)
     {
-        dataLists.pokemonGenLists.Add(key, dataList);
+        dataLists.pokemonGenLists[key] = dataList;
         references.AddRange(dataList);
     }
     

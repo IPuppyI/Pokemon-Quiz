@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
 
@@ -11,10 +12,10 @@ public class PokemonGuessing : MonoBehaviour
 
     public bool CheckAnswer()
     {
-        string pokemonName = pokemonSelector.GetPokemonInfo().name.ToLower();
+        string pokemonName = pokemonSelector.GetPokemonInfo().name.ToLower().Trim();
         string inputText = input.text.ToLower().Trim();
-        inputText = inputText.Replace(" ", "");
-        pokemonName = pokemonName.Replace(" ", "");
+        inputText = Regex.Replace(inputText, @"\W", "");
+        pokemonName = Regex.Replace(pokemonName, @"\W", "");
         int distance = LevenshteinDistance.Calculate(inputText, pokemonName);
         return (CheckName(pokemonName, distance));
     }
