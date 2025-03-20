@@ -31,15 +31,20 @@ public class GameManager : MonoBehaviour
         {
             if (optionsConfig.genToggles[i] == true)
             {
-                try
-                {
-                    pokemonListsManager.AddList(Filenames.FileNames[i].Split('.', '-')[0], PokemonDataManager.Load(Filenames.FileNames[i]));
-                }
-                catch
-                {
-                    pokemonListsManager.AddList(Filenames.FileNames[i].Split('.', '-')[0], jsonReader.dataLists.pokemonGenLists[Filenames.FileNames[i].Split('.', '-')[0]]);
-                }
+                AddPokemonList(Filenames.FileNames[i]);
             }
+        }
+    }
+
+    private void AddPokemonList(string fileName)
+    {
+        try
+        {
+            pokemonListsManager.AddList(fileName.Split('.', '-')[0], PokemonDataManager.Load(fileName));
+        }
+        catch
+        {
+            pokemonListsManager.AddList(fileName.Split('.', '-')[0], jsonReader.dataLists.pokemonGenLists[fileName.Split('.', '-')[0]]);
         }
     }
 

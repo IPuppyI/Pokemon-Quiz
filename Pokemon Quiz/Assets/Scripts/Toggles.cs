@@ -7,8 +7,8 @@ public class Toggles : MonoBehaviour
 {
     [SerializeField] private Toggle silhouette;
     [SerializeField] private Toggle[] toggles;
-    [SerializeField] private Color disabled;
-    [SerializeField] private Color enabled;
+    [SerializeField] private Color disabledColor;
+    [SerializeField] private Color enabledColor;
     private OptionsConfig optionsConfig;
 
     private void OnEnable()
@@ -40,7 +40,7 @@ public class Toggles : MonoBehaviour
                 if (toggle.isOn)
                 {
                     toggle.interactable = false;
-                    toggle.graphic.color = disabled;
+                    toggle.graphic.color = disabledColor;
                 }
             }
             optionsConfig.togglesEnabled = false;
@@ -50,7 +50,7 @@ public class Toggles : MonoBehaviour
             foreach (Toggle toggle in toggles)
             {
                 toggle.interactable = true;
-                toggle.graphic.color = enabled;
+                toggle.graphic.color = enabledColor;
             }
             optionsConfig.togglesEnabled = true;
         }
