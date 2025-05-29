@@ -51,45 +51,6 @@ public class PokemonListsManager : MonoBehaviour
 
     public void SaveCurrentLists()
     {
-        /*foreach (var dataList in dataLists.pokemonGenLists)
-        {
-            switch (dataList.Key)
-            {
-                case "Gen1":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[0]);
-                    break;
-                case "Gen2":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[1]);
-                    break;
-                case "Gen3":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[2]);
-                    break;
-                case "Gen4":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[3]);
-                    break;
-                case "Gen5":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[4]);
-                    break;
-                case "Gen6":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[5]);
-                    break;
-                case "Gen7":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[6]);
-                    break;
-                case "Gen8":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[7]);
-                    break;
-                case "Gen9":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[8]);
-                    break;
-                case "LegendsArceus":
-                    PokemonDataManager.Save(dataList.Value, Filenames.FileNames[9]);
-                    break;
-                default:
-                    break;
-            }
-        }*/
-
         foreach (var list in dataLists.pokemonGenLists)
         {
             gm.dataLists.pokemonGenLists[list.Key] = list.Value;

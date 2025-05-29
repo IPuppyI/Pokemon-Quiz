@@ -49,17 +49,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /*private void AddPokemonList(string fileName)
-    {
-        try
-        {
-            pokemonListsManager.AddList(fileName.Split('.', '-')[0], PokemonDataManager.Load(fileName));
-        }
-        catch
-        {
-            pokemonListsManager.AddList(fileName.Split('.', '-')[0], jsonReader.dataLists.pokemonGenLists[fileName.Split('.', '-')[0]]);
-        }
-    }*/
     private void AddPokemonList(string key)
     {
         pokemonListsManager.AddList(key, dataLists.pokemonGenLists[key]);

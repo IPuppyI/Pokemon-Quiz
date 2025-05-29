@@ -6,13 +6,6 @@ using Newtonsoft.Json;
 
 public static class PokemonDataManager
 {
-    /*public static void Save(List<PokemonInfo> list, string fileName)
-    {
-        string filePath = Path.Combine(Application.persistentDataPath, fileName);
-        string json = JsonConvert.SerializeObject(list, Formatting.Indented);
-        File.WriteAllText(filePath, json);
-        Debug.Log("Pokemon Data saved to: " + filePath);
-    }*/
     public static void Save(PokemonLists list, string fileName)
     {
         string filePath = Path.Combine(Application.persistentDataPath, fileName);
@@ -20,23 +13,6 @@ public static class PokemonDataManager
         File.WriteAllText(filePath, json);
         Debug.Log("Pokemon Data saved to: " + filePath);
     }
-    /*public static List<PokemonInfo> Load(string fileName)
-    {
-        List<PokemonInfo> dataList = new List<PokemonInfo>();
-
-        string filePath = Path.Combine(Application.persistentDataPath, fileName);
-        if (File.Exists(filePath))
-        {
-            string json = File.ReadAllText(filePath);
-            dataList = JsonConvert.DeserializeObject<List<PokemonInfo>>(json);
-        }
-        else
-        {
-            Debug.LogError("JSON file not found: " + fileName);
-            return null;
-        }
-        return dataList;
-    }*/
     public static PokemonLists Load(string fileName)
     {
         PokemonLists dataList;
