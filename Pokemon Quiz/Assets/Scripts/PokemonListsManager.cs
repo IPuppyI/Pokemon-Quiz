@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Unity.Collections;
 using UnityEngine;
+using static UnityEngine.Analytics.IAnalytic;
 
 public class PokemonListsManager : MonoBehaviour
 {
     private PokemonLists dataLists = new PokemonLists(empty:true);
     private List<PokemonInfo> references = new List<PokemonInfo>();
+    private GameManager gm;
 
-    private void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        gm = FindAnyObjectByType<GameManager>();
     }
 
     public void AddList(string key, List<PokemonInfo> dataList)
@@ -86,7 +90,11 @@ public class PokemonListsManager : MonoBehaviour
             }
         }*/
 
-        PokemonDataManager.Save(dataLists, Filenames.FileNames[0]);
+        foreach (var list in dataLists.pokemonGenLists)
+        {
+            gm.dataLists.pokemonGenLists[list.Key] = list.Value;
+        }
+        PokemonDataManager.Save(gm.dataLists, Filenames.FileNames[0]);
     }
 
     public void Clear()

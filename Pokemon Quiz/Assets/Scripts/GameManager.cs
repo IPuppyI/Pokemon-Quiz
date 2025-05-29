@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private PokemonListsManager pokemonListsManager;
     private JsonReader jsonReader;
     private OptionsConfig optionsConfig;
-    private PokemonLists dataLists;
+    public PokemonLists dataLists;
 
     private void Start()
     {
@@ -60,9 +60,9 @@ public class GameManager : MonoBehaviour
             pokemonListsManager.AddList(fileName.Split('.', '-')[0], jsonReader.dataLists.pokemonGenLists[fileName.Split('.', '-')[0]]);
         }
     }*/
-    private void AddPokemonList(string fileName)
+    private void AddPokemonList(string key)
     {
-        pokemonListsManager.AddList(fileName, dataLists.pokemonGenLists[fileName]);
+        pokemonListsManager.AddList(key, dataLists.pokemonGenLists[key]);
     }
 
     public OptionsConfig GetOptionsConfig()
