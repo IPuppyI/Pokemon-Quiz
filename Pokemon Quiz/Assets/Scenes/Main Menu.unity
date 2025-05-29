@@ -1575,28 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a25bf6ce66ebf2458fd370208fd1147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gen1: {fileID: 4900000, guid: a902435d3cf66bc4289c50cc042d4a3a, type: 3}
-  gen2: {fileID: 4900000, guid: f444bd4789a155247a47c839e7adc991, type: 3}
-  gen3: {fileID: 4900000, guid: 90b6d010abd4b594bbdacada14dbfa8a, type: 3}
-  gen4: {fileID: 4900000, guid: 43ede3a68746aab4caf4e7a5b4b4a55c, type: 3}
-  gen5: {fileID: 4900000, guid: 4fbc5f0bed35faa41b694c4a4f678312, type: 3}
-  gen6: {fileID: 4900000, guid: d2f1d05473e6a5240814e20cb14dc2bf, type: 3}
-  gen7: {fileID: 4900000, guid: 4c60ecaab571dbc4a9f62fc0f9abd5fa, type: 3}
-  gen8: {fileID: 4900000, guid: 8308bc58b14545647afdb3ac769fd930, type: 3}
-  gen9: {fileID: 4900000, guid: d9588b3357e136a45a7b3baabc8ff139, type: 3}
-  legendsArceus: {fileID: 4900000, guid: 239fffddf009cba4282baae676147ec2, type: 3}
-  pokemonLists:
-    pokemonLists:
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
-    - Pokemon: []
+  pokemonInfo: {fileID: 4900000, guid: bfb698c58a2fc74459748325f4ef2a91, type: 3}
 --- !u!4 &2032639372
 Transform:
   m_ObjectHideFlags: 0

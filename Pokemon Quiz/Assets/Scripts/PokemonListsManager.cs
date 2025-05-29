@@ -47,7 +47,7 @@ public class PokemonListsManager : MonoBehaviour
 
     public void SaveCurrentLists()
     {
-        foreach (var dataList in dataLists.pokemonGenLists)
+        /*foreach (var dataList in dataLists.pokemonGenLists)
         {
             switch (dataList.Key)
             {
@@ -84,7 +84,9 @@ public class PokemonListsManager : MonoBehaviour
                 default:
                     break;
             }
-        }
+        }*/
+
+        PokemonDataManager.Save(dataLists, Filenames.FileNames[0]);
     }
 
     public void Clear()
