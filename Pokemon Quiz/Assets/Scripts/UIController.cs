@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 public class UIController : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private JsonReader jsonReader;
     [SerializeField] private PokemonListsManager pokemonListsManager;
     [SerializeField] private Toggles toggles;
     [SerializeField] private PokemonGuessing pokemonGuessing;
@@ -33,6 +34,7 @@ public class UIController : MonoBehaviour
     private void Awake()
     {
         gameManager = FindFirstObjectByType<GameManager>();
+        jsonReader = FindFirstObjectByType<JsonReader>();
         pokemonListsManager = FindFirstObjectByType<PokemonListsManager>();
         if (gameManager == null)
         {
@@ -131,43 +133,43 @@ public class UIController : MonoBehaviour
 
     public void ResetGen1Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data", Filenames.FileNames[0]);
+        OpenConfirmationWindow("This will delete your Gen 1 Pokemon data", Filenames.CategoryNames[0]);
     }
     public void ResetGen2Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 2 Pokemon data", Filenames.FileNames[1]);
+        OpenConfirmationWindow("This will delete your Gen 2 Pokemon data", Filenames.CategoryNames[1]);
     }
     public void ResetGen3Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 3 Pokemon data", Filenames.FileNames[2]);
+        OpenConfirmationWindow("This will delete your Gen 3 Pokemon data", Filenames.CategoryNames[2]);
     }
     public void ResetGen4Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 4 Pokemon data", Filenames.FileNames[3]);
+        OpenConfirmationWindow("This will delete your Gen 4 Pokemon data", Filenames.CategoryNames[3]);
     }
     public void ResetGen5Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 5 Pokemon data", Filenames.FileNames[4]);
+        OpenConfirmationWindow("This will delete your Gen 5 Pokemon data", Filenames.CategoryNames[4]);
     }
     public void ResetGen6Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 6 Pokemon data", Filenames.FileNames[5]);
+        OpenConfirmationWindow("This will delete your Gen 6 Pokemon data", Filenames.CategoryNames[5]);
     }
     public void ResetGen7Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 7 Pokemon data", Filenames.FileNames[6]);
+        OpenConfirmationWindow("This will delete your Gen 7 Pokemon data", Filenames.CategoryNames[6]);
     }
     public void ResetGen8Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 8 Pokemon data", Filenames.FileNames[7]);
+        OpenConfirmationWindow("This will delete your Gen 8 Pokemon data", Filenames.CategoryNames[7]);
     }
     public void ResetGen9Button()
     {
-        OpenConfirmationWindow("This will delete your Gen 9 Pokemon data", Filenames.FileNames[8]);
+        OpenConfirmationWindow("This will delete your Gen 9 Pokemon data", Filenames.CategoryNames[8]);
     }
     public void ResetArceusButton()
     {
-        OpenConfirmationWindow("This will delete your Legends Arceus Pokemon data", Filenames.FileNames[9]);
+        OpenConfirmationWindow("This will delete your Legends Arceus Pokemon data", Filenames.CategoryNames[9]);
     }
     public void ResetAllButton()
     {
@@ -248,32 +250,24 @@ public class UIController : MonoBehaviour
         FileName = fileName;
         Debug.Log("Confirmation window opened | " + FileName);
     }
-    private void DeleteData(string file)
+    private void DeleteData(string key)
     {
         try
         {
-            if (file == "All")
+            if (key == "All")
             {
                 PokemonDataManager.Delete(Filenames.FileNames[0]);
-                PokemonDataManager.Delete(Filenames.FileNames[1]);
-                PokemonDataManager.Delete(Filenames.FileNames[2]);
-                PokemonDataManager.Delete(Filenames.FileNames[3]);
-                PokemonDataManager.Delete(Filenames.FileNames[4]);
-                PokemonDataManager.Delete(Filenames.FileNames[5]);
-                PokemonDataManager.Delete(Filenames.FileNames[6]);
-                PokemonDataManager.Delete(Filenames.FileNames[7]);
-                PokemonDataManager.Delete(Filenames.FileNames[8]);
-                PokemonDataManager.Delete(Filenames.FileNames[9]);
             }
             else
             {
-                PokemonDataManager.Delete(file);
-                Debug.Log($"{file} deleted.");
+                gameManager.dataLists.pokemonGenLists[key] = jsonReader.dataLists.pokemonGenLists[key];
+                PokemonDataManager.Save(gameManager.dataLists, Filenames.FileNames[0]);
+                Debug.Log($"{key} deleted.");
             }
         }
         catch
         {
-            Debug.Log($"{file} not deleted.");
+            Debug.Log($"{key} not deleted.");
         }
     }
     #endregion
